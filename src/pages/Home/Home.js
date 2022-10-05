@@ -1,6 +1,7 @@
 import Header from 'components/Header';
 import ListTop from './components/ListTop';
-import ListBottom from './components/ListBottom';
+import Nav from 'components/Nav';
+
 import styled from 'styled-components';
 
 const Home = () => {
@@ -9,8 +10,8 @@ const Home = () => {
       <Header />
       <Inner>
         <ListTop />
-        <ListBottom />
       </Inner>
+      <Nav />
     </>
   );
 };
