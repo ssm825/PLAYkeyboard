@@ -1,5 +1,11 @@
+import Header from 'components/Header';
+
 const Home = () => {
-  return <div>메인 페이지</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default Home;
