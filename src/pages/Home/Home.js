@@ -1,3 +1,4 @@
+import Header from 'components/Header';
 import ListTop from './components/ListTop';
 import ListBottom from './components/ListBottom';
 import styled from 'styled-components';
@@ -5,7 +6,7 @@ import styled from 'styled-components';
 const Home = () => {
   return (
     <>
-      <div>메인 페이지</div>
+      <Header />
       <Inner>
         <ListTop />
         <ListBottom />
