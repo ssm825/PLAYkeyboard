@@ -52,8 +52,9 @@ const Page2Bottom = () => {
           <ProductBuyBox>
             <ProductBuy>
               <ProductP>
-                구매
-                <Image3 src="/images/icon/diamond.png" />7
+                구매&nbsp;
+                <Diamond src="/images/ic_dia.png" />
+                &nbsp;7
               </ProductP>
               <ProductP>광고제거 · 무제한 사용</ProductP>
             </ProductBuy>
@@ -66,28 +67,27 @@ const Page2Bottom = () => {
 
 export default Page2Bottom;
 
-const Image3 = styled.img`
-  width: 14px;
-`;
-
 const Inner = styled.div`
   width: 100%;
   max-width: 1120px;
-  min-width: 768px;
   margin: 100px auto 0;
-  padding: 0 16px;
 `;
 
 const Content = styled.div`
-  width: 50%;
   margin: 0 auto;
-  border: 1px solid #ebebeb;
 `;
 
-const ImageArea = styled.div``;
+const ImageArea = styled.div`
+  max-width: 1120px;
+  margin: 0 auto 40px;
+`;
 
 const Image = styled.img`
   width: 33%;
+
+  @media screen and (min-width: 768px) {
+    width: 25%;
+  }
 `;
 
 const NoticeArea = styled.div`
@@ -110,13 +110,14 @@ const UserReactionArea = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 18px;
+  margin: 50px auto 18px;
 `;
 
 const EmoArea = styled.div`
   cursor: pointer;
 `;
 const EmoImgArea = styled.div`
+  max-width: 1120px;
   text-align: center;
 `;
 const EmoComment = styled.div`
@@ -128,9 +129,9 @@ const EmoComment = styled.div`
 
 const ProductInquiry = styled.button`
   width: 70%;
-  height: 40px;
-  margin: 24px;
-  font-size: 14px;
+  margin: 24px 15px;
+  padding: 2.133vh;
+  font-size: 1rem;
   line-height: 24px;
   font-weight: 700;
   color: #ff417d;
@@ -138,23 +139,25 @@ const ProductInquiry = styled.button`
   border-radius: 20px;
   cursor: pointer;
 `;
+
 const ProductBuy = styled.button`
   width: 80%;
-  height: 46px;
   margin: 10px;
+  padding: 2.133vh;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.857rem;
   color: #ffffff;
   background: #ff417d;
   border-radius: 30px;
   cursor: pointer;
 `;
 
-const ProductBuyBox = styled.div``;
+const ProductBuyBox = styled.div`
+  border-top: 1px solid #f2f3f7;
+`;
 
 const ProductInquiryBox = styled.div`
   border-top: 1px solid #f2f3f7;
-  border-bottom: 1px solid #f2f3f7;
 `;
 
 const ButtonArea = styled.div`
@@ -169,19 +172,24 @@ const ProductP = styled.p`
   }
 `;
 
+const Diamond = styled.img`
+  width: 14px;
+  vertical-align: text-top;
+`;
+
 const REACTION_DATA = [
   {
     id: 0,
     name: 'smile',
     content: '맘에 들어요',
-    url: '/images/icon/smile.svg',
+    url: '/images/emoji_smile.svg',
   },
   {
     id: 1,
     name: 'heart',
     content: '심쿵했어요',
-    url: '/images/icon/heart.svg',
+    url: '/images/emoji_heart.svg',
   },
-  { id: 2, name: 'wingk', content: '응원해요', url: '/images/icon/wingk.svg' },
-  { id: 3, name: 'cry', content: '갖고싶어요', url: '/images/icon/cry.svg' },
+  { id: 2, name: 'wingk', content: '응원해요', url: '/images/emoji_wingk.svg' },
+  { id: 3, name: 'cry', content: '갖고싶어요', url: '/images/emoji_cry.svg' },
 ];

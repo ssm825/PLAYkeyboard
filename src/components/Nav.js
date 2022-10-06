@@ -117,7 +117,7 @@ const Store = styled.button`
   &:hover {
     div {
       ${Mixins({
-        img: '/assets/images/ic_nav_store.png',
+        img: '/images/ic_nav_store.png',
       })};
     }
   }
@@ -126,7 +126,7 @@ const Charge = styled.button`
   &:hover {
     div {
       ${Mixins({
-        img: '/assets/images/ic_nav_charge.png',
+        img: '/images/ic_nav_charge.png',
       })};
     }
   }
@@ -140,7 +140,7 @@ const Setting = styled.button`
   &:hover {
     div {
       ${Mixins({
-        img: '/assets/images/ic_nav_setting.png',
+        img: '/images/ic_nav_setting.png',
       })};
     }
   }
@@ -148,22 +148,22 @@ const Setting = styled.button`
 
 const StoreIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_store_disabled.png',
+    img: '/images/ic_nav_store_disabled.png',
   })};
 `;
 const ChargeIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_charge_disabled.png',
+    img: '/images/ic_nav_charge_disabled.png',
   })};
 `;
 const MyThemeIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_mytheme.png',
+    img: '/images/ic_nav_mytheme.png',
   })};
 `;
 const SettingIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_setting_disabled.png',
+    img: '/images/ic_nav_setting_disabled.png',
   })};
 `;
 
