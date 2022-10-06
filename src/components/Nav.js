@@ -31,7 +31,7 @@ const Mixins = ({ img }) => css`
   background: url(${img}) no-repeat center;
   background-size: contain;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
 `;
 
 const Wrapper = styled.nav`
@@ -47,6 +47,7 @@ const Wrapper = styled.nav`
   box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.08),
     inset 0px -11px 8px -10px rgba(0, 0, 0, 0.08);
   background-color: ${colors.white};
+  transition: 0.2s;
 
   @media (max-width: 768px) {
     height: 90px;
