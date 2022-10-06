@@ -17,4 +17,9 @@ export default HistoryBack;
 const BackToPage = styled.button`
   display: inline-block;
   padding: 20px;
+  cursor: pointer;
+
+  img {
+   image-rendering: -webkit-optimize-contrast;
+  }
 `;
