@@ -21,6 +21,6 @@ export default Home;
 const Inner = styled.div`
   width: 100%;
   max-width: 1120px;
-  margin: 100px auto 0;
+  margin: 0 auto 0;
   padding: 0 16px;
 `;
