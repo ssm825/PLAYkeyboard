@@ -207,6 +207,7 @@ const ListItem = styled.div`
   width: calc(32% - 4px);
   margin-top: 33px;
   border: 1px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: calc(50% - 8px);

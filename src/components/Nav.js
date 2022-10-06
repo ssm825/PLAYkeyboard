@@ -42,13 +42,13 @@ const Wrapper = styled.nav`
   margin-top: 30px;
   padding-bottom: 20px;
   height: 120px;
+  width: 100%;
+  max-width: calc(1120px - 32px);
   box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.08),
     inset 0px -11px 8px -10px rgba(0, 0, 0, 0.08);
-
   background-color: ${colors.white};
 
   @media (max-width: 768px) {
-    width: 100%;
     height: 90px;
   }
 
@@ -59,7 +59,7 @@ const Wrapper = styled.nav`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  width: 100%;
 
   button {
     position: relative;
@@ -88,7 +88,6 @@ const Content = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
     button {
       padding: 0 30px;
       div {
