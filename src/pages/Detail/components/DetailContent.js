@@ -53,7 +53,8 @@ const Page2Bottom = () => {
             <ProductBuy>
               <ProductP>
                 구매&nbsp;
-                <Diamond src="/images/icon/diamond.png" />&nbsp;7
+                <Diamond src="/images/ic_dia.png" />
+                &nbsp;7
               </ProductP>
               <ProductP>광고제거 · 무제한 사용</ProductP>
             </ProductBuy>
@@ -78,7 +79,7 @@ const Content = styled.div`
 
 const ImageArea = styled.div`
   max-width: 1120px;
-  margin:0 auto 40px;
+  margin: 0 auto 40px;
 `;
 
 const Image = styled.img`
@@ -116,7 +117,7 @@ const EmoArea = styled.div`
   cursor: pointer;
 `;
 const EmoImgArea = styled.div`
-max-width: 1120px;
+  max-width: 1120px;
   text-align: center;
 `;
 const EmoComment = styled.div`
@@ -152,7 +153,7 @@ const ProductBuy = styled.button`
 `;
 
 const ProductBuyBox = styled.div`
-border-top: 1px solid #f2f3f7;
+  border-top: 1px solid #f2f3f7;
 `;
 
 const ProductInquiryBox = styled.div`
@@ -181,14 +182,14 @@ const REACTION_DATA = [
     id: 0,
     name: 'smile',
     content: '맘에 들어요',
-    url: '/images/icon/smile.svg',
+    url: '/images/emoji_smile.svg',
   },
   {
     id: 1,
     name: 'heart',
     content: '심쿵했어요',
-    url: '/images/icon/heart.svg',
+    url: '/images/emoji_heart.svg',
   },
-  { id: 2, name: 'wingk', content: '응원해요', url: '/images/icon/wingk.svg' },
-  { id: 3, name: 'cry', content: '갖고싶어요', url: '/images/icon/cry.svg' },
+  { id: 2, name: 'wingk', content: '응원해요', url: '/images/emoji_wingk.svg' },
+  { id: 3, name: 'cry', content: '갖고싶어요', url: '/images/emoji_cry.svg' },
 ];
