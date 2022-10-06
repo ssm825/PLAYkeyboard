@@ -200,6 +200,8 @@ const ListContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
+
+  margin-bottom: 150px;
 `;
 
 const ListItem = styled.div`
