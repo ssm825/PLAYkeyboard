@@ -1,5 +1,26 @@
+import Header from 'components/Header';
+import ListTop from './components/ListTop';
+import Nav from 'components/Nav';
+
+import styled from 'styled-components';
+
 const Home = () => {
-  return <div>메인 페이지</div>;
+  return (
+    <>
+      <Header />
+      <Inner>
+        <ListTop />
+      </Inner>
+      <Nav />
+    </>
+  );
 };
 
 export default Home;
+
+const Inner = styled.div`
+  width: 100%;
+  max-width: 1120px;
+  margin: 100px auto 0;
+  padding: 0 16px;
+`;

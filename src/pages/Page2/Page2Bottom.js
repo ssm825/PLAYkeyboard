@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import themeApi from 'api/themeAPI';
 import { useParams } from 'react-router-dom';
 
-const Page2 = () => {
+const Page2Bottom = () => {
   const [figureImg, setFigureImg] = useState('');
-  const { themId } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    themeApi.getThemeDetailData(themId).then((data) => {
+    themeApi.getThemeDetailData(id).then((data) => {
       setFigureImg(data.data.figure);
     });
   }, []);
@@ -64,7 +64,7 @@ const Page2 = () => {
   );
 };
 
-export default Page2;
+export default Page2Bottom;
 
 const Image3 = styled.img`
   width: 14px;
