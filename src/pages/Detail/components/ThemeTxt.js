@@ -6,6 +6,7 @@ const ThemeTxt = ({themeData}) => {
       <TxtArea>
          <ThemeName>{themeData.name}</ThemeName>
          <ThemeCreator>{themeData.creator}</ThemeCreator>
+         <ShareBtn><img src="/images/ic_all_share.png" alt="share-button"/></ShareBtn>
          <div>
             {themeData.hashtag && themeData.hashtag.map((data, idx) => {
                return (
@@ -20,6 +21,7 @@ const ThemeTxt = ({themeData}) => {
 export default ThemeTxt;
 
 const TxtArea = styled.div`
+   position: relative;
    padding: 0 20px;
 `;
 
@@ -36,6 +38,13 @@ const ThemeCreator = styled.p`
    font-weight: 500;
    line-height: 20px;
    color: #919299;
+`;
+
+const ShareBtn = styled.button`
+   position: absolute;
+   top: 24px;
+   right: 20px;
+   cursor: pointer;
 `;
 
 const Tag = styled.div`
