@@ -79,6 +79,8 @@
 #### Theme list
 - Swiper 라이브러리를 이용한 카테고리 이동
 - 조건부 랜더링을 이용한 카테고리 클릭효과
+- useNavigate로 디테일 페이지에 Theme ID전달
+- javascript를 사용하여 무한스크롤 구현
 
 <br>
 
