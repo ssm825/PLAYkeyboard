@@ -11,7 +11,7 @@
 <br><br>
 
 # 배포 링크
-- 링크 첨부
+- [배포 ](https://633ee4d8280de3008bb1795c--kaleidoscopic-piroshki-1a89fd.netlify.app/)
 
 <br><br>
 
@@ -65,7 +65,7 @@
 
 - axios를 이용한 api 통신으로 데이터를 불러옴
 - 동적 라우팅 구현
-- 반응형 디자인 적용(desktop, tablet, mobile)
+- 반응형 디자인 적용(web, tablet, mobile)
 
 <br>
 
@@ -92,6 +92,7 @@
 #### Theme Info
 - 동적 라우팅 구현 및 params(themeId)를 활용하여 테마정보 불러오기
 - 뒤로가기 버튼 클릭시 첫번째 화면으로 이동
+- Swiper 라이브러리를 이용한 테마이미지 슬라이드 기능 구현
 
 <br>
 
@@ -102,4 +103,4 @@
 <br><br>
 
 # 팀 노션
-- 팀 노션 링크 적용
+[- 팀 노션 링크](https://www.notion.so/wecode/7-d9c9440b686f465bbda33f31a87b6e2f)
