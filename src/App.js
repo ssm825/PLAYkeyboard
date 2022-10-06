@@ -1,7 +1,5 @@
 import Home from 'pages/Home/Home';
-import Page2 from 'pages/Page2/Page2';
-import Page2Bottom from 'pages/Page2/Page2Bottom';
-import Page2Top from 'pages/Page2/Page2Top';
+import Detail from 'pages/Detail/Detail';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -9,8 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail/:id" element={<Page2Top />} />
-        {/* <Route path="/detail/:id" element={<Page2Bottom />} /> */}
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );

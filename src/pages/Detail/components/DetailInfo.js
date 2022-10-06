@@ -6,39 +6,37 @@ import HistoryBack from './HistoryBack';
 import ThemeImage from './ThemeImage';
 import ThemeTxt from './ThemeTxt';
 import AdArea from './AdArea';
-import Page2Bottom from './Page2Bottom';
 
-const Page2Top = () => {
-  const [a, setA] = useState([]);
+const DetailInfo = () => {
+  const [themeData, setThemeData] = useState([]);
   const params = useParams();
   useEffect(() => {
     themeApi.getThemeDetailData(params.id).then((data) => {
-      setA(data.data);
+      setThemeData(data.data);
     });
   }, []);
 
-  if (a) {
-    return (
-      <div>
-        <Page2top>
+  return (
+    <>
+      {themeData && (
+        <Detail>
           <HistoryBack />
           <FlexArea>
-            <ThemeImage a={a} />
-            <div>
-              <ThemeTxt a={a} />
+            <ThemeImage themeData={themeData} />
+            <TextArea>
+              <ThemeTxt themeData={themeData} />
               <AdArea />
-            </div>
+            </TextArea>
           </FlexArea>
-          <Page2Bottom />
-        </Page2top>
-      </div>
-    );
-  }
+        </Detail>
+      )}
+    </>
+  );
 };
 
-export default Page2Top;
+export default DetailInfo;
 
-const Page2top = styled.div`
+const Detail = styled.div`
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -51,4 +49,8 @@ const FlexArea = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
   }
+`;
+
+const TextArea = styled.div`
+  flex: 1;
 `;
