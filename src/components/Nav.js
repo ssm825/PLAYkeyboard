@@ -31,7 +31,7 @@ const Mixins = ({ img }) => css`
   background: url(${img}) no-repeat center;
   background-size: contain;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
 `;
 
 const Wrapper = styled.nav`
@@ -39,13 +39,15 @@ const Wrapper = styled.nav`
   justify-content: center;
   position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
   margin-top: 30px;
   padding-bottom: 20px;
-  height: 120px;
   box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.08),
     inset 0px -11px 8px -10px rgba(0, 0, 0, 0.08);
-
   background-color: ${colors.white};
+  transition: 0.2s;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -59,8 +61,8 @@ const Wrapper = styled.nav`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1200px;
-
+  width: 1120px;
+  padding: 0 30px;
   button {
     position: relative;
     padding: 0 20px;
