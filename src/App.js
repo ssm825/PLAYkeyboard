@@ -1,10 +1,12 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home/Home';
 import Detail from 'pages/Detail/Detail';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ScrollTop from 'components/ScrollTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
