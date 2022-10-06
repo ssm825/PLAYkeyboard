@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 const Page2Bottom = () => {
   const [figureImg, setFigureImg] = useState('');
   const { id } = useParams();
+  const [onEmo, setOnEmo] = useState('nob');
 
   useEffect(() => {
     themeApi.getThemeDetailData(id).then((data) => {
@@ -35,12 +36,35 @@ const Page2Bottom = () => {
         )}
         <UserReactionArea>
           {REACTION_DATA.map((data) => {
-            return (
-              <EmoArea key={data.id}>
+            return data.name === onEmo ? (
+              <EmoArea
+                key={data.id}
+                onClick={() => {
+                  setOnEmo(data.name);
+                  if (onEmo === data.name) {
+                    setOnEmo('');
+                  }
+                }}
+              >
                 <EmoImgArea>
                   <img src={data.url} alt="x" />
                 </EmoImgArea>
-                <EmoComment>{data.content}</EmoComment>
+                <EmoOnComment>{data.content}</EmoOnComment>
+                <EmoOnComment>1</EmoOnComment>
+              </EmoArea>
+            ) : (
+              <EmoArea
+                key={data.id}
+                onClick={() => {
+                  setOnEmo(data.name);
+                }}
+              >
+                <EmoImgArea>
+                  <img src={data.url} alt="x" />
+                </EmoImgArea>
+
+                <EmoOffComment>{data.content}</EmoOffComment>
+                <EmoOffComment>0</EmoOffComment>
               </EmoArea>
             );
           })}
@@ -53,7 +77,8 @@ const Page2Bottom = () => {
             <ProductBuy>
               <ProductP>
                 구매&nbsp;
-                <Diamond src="/images/icon/diamond.png" />&nbsp;7
+                <Diamond src="/images/icon/diamond.png" />
+                &nbsp;7
               </ProductP>
               <ProductP>광고제거 · 무제한 사용</ProductP>
             </ProductBuy>
@@ -78,7 +103,7 @@ const Content = styled.div`
 
 const ImageArea = styled.div`
   max-width: 1120px;
-  margin:0 auto 40px;
+  margin: 0 auto 40px;
 `;
 
 const Image = styled.img`
@@ -116,10 +141,19 @@ const EmoArea = styled.div`
   cursor: pointer;
 `;
 const EmoImgArea = styled.div`
-max-width: 1120px;
+  max-width: 1120px;
   text-align: center;
 `;
-const EmoComment = styled.div`
+const EmoOnComment = styled.div`
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #ff417d;
+`;
+
+const EmoOffComment = styled.div`
+  text-align: center;
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
@@ -152,7 +186,7 @@ const ProductBuy = styled.button`
 `;
 
 const ProductBuyBox = styled.div`
-border-top: 1px solid #f2f3f7;
+  border-top: 1px solid #f2f3f7;
 `;
 
 const ProductInquiryBox = styled.div`
