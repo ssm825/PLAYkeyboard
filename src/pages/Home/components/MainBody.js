@@ -106,11 +106,11 @@ const MainBody = () => {
                   </Hashtag>
                   <ItemBottom>
                     <LikeDown>
-                      <img src="/images/icon/down.png" alt="다운아이콘" />
+                      <img src="/images/ic_all_download.png" alt="다운아이콘" />
                       {downloads}
                     </LikeDown>
                     <LikeDown>
-                      <img src="/images/icon/price.png" alt="가격아이콘" />
+                      <img src="/images/ic_dia.png" alt="가격아이콘" />
                       {price}
                     </LikeDown>
                   </ItemBottom>
@@ -207,6 +207,7 @@ const ListItem = styled.div`
   width: calc(32% - 4px);
   margin-top: 33px;
   border: 1px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: calc(50% - 8px);

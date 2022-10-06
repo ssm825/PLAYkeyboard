@@ -77,7 +77,7 @@ const Page2Bottom = () => {
             <ProductBuy>
               <ProductP>
                 구매&nbsp;
-                <Diamond src="/images/icon/diamond.png" />
+                <Diamond src="/images/ic_dia.png" />
                 &nbsp;7
               </ProductP>
               <ProductP>광고제거 · 무제한 사용</ProductP>
@@ -215,14 +215,14 @@ const REACTION_DATA = [
     id: 0,
     name: 'smile',
     content: '맘에 들어요',
-    url: '/images/icon/smile.svg',
+    url: '/images/emoji_smile.svg',
   },
   {
     id: 1,
     name: 'heart',
     content: '심쿵했어요',
-    url: '/images/icon/heart.svg',
+    url: '/images/emoji_heart.svg',
   },
-  { id: 2, name: 'wingk', content: '응원해요', url: '/images/icon/wingk.svg' },
-  { id: 3, name: 'cry', content: '갖고싶어요', url: '/images/icon/cry.svg' },
+  { id: 2, name: 'wingk', content: '응원해요', url: '/images/emoji_wingk.svg' },
+  { id: 3, name: 'cry', content: '갖고싶어요', url: '/images/emoji_cry.svg' },
 ];

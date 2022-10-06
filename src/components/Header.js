@@ -7,7 +7,7 @@ const Header = () => {
       <Content>
         <Title>
           <Link to="/">
-            <img src="/assets/images/img_playkeyboard_logo.png" alt="logo" />
+            <img src="/images/img_playkeyboard_logo.png" alt="logo" />
           </Link>
         </Title>
         <Search>
@@ -61,10 +61,10 @@ const Search = styled.div``;
 const SearchIcon = styled.div`
   width: 40px;
   height: 40px;
-  background: url('/assets/images/ic_search.png') no-repeat center;
+  background: url('/images/ic_search.png') no-repeat center;
   background-size: cover;
   &:hover {
-    background: url('/assets/images/ic_search_hover.png') no-repeat center;
+    background: url('/images/ic_search_hover.png') no-repeat center;
     background-size: cover;
     cursor: pointer;
     transition: 0.2s;

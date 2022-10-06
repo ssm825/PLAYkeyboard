@@ -31,7 +31,7 @@ const Mixins = ({ img }) => css`
   background: url(${img}) no-repeat center;
   background-size: contain;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
 `;
 
 const Wrapper = styled.nav`
@@ -42,13 +42,14 @@ const Wrapper = styled.nav`
   margin-top: 30px;
   padding-bottom: 20px;
   height: 120px;
+  width: 100%;
+  max-width: calc(1120px - 32px);
   box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.08),
     inset 0px -11px 8px -10px rgba(0, 0, 0, 0.08);
-
   background-color: ${colors.white};
+  transition: 0.2s;
 
   @media (max-width: 768px) {
-    width: 100%;
     height: 90px;
   }
 
@@ -59,7 +60,7 @@ const Wrapper = styled.nav`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  width: 100%;
 
   button {
     position: relative;
@@ -88,7 +89,6 @@ const Content = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
     button {
       padding: 0 30px;
       div {
@@ -118,7 +118,7 @@ const Store = styled.button`
   &:hover {
     div {
       ${Mixins({
-        img: '/assets/images/ic_nav_store.png',
+        img: '/images/ic_nav_store.png',
       })};
     }
   }
@@ -127,7 +127,7 @@ const Charge = styled.button`
   &:hover {
     div {
       ${Mixins({
-        img: '/assets/images/ic_nav_charge.png',
+        img: '/images/ic_nav_charge.png',
       })};
     }
   }
@@ -141,7 +141,7 @@ const Setting = styled.button`
   &:hover {
     div {
       ${Mixins({
-        img: '/assets/images/ic_nav_setting.png',
+        img: '/images/ic_nav_setting.png',
       })};
     }
   }
@@ -149,22 +149,22 @@ const Setting = styled.button`
 
 const StoreIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_store_disabled.png',
+    img: '/images/ic_nav_store_disabled.png',
   })};
 `;
 const ChargeIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_charge_disabled.png',
+    img: '/images/ic_nav_charge_disabled.png',
   })};
 `;
 const MyThemeIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_mytheme.png',
+    img: '/images/ic_nav_mytheme.png',
   })};
 `;
 const SettingIcon = styled.div`
   ${Mixins({
-    img: '/assets/images/ic_nav_setting_disabled.png',
+    img: '/images/ic_nav_setting_disabled.png',
   })};
 `;
 
