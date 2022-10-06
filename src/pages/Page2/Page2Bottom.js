@@ -81,7 +81,6 @@ const Inner = styled.div`
 const Content = styled.div`
   width: 50%;
   margin: 0 auto;
-  border: 1px solid #ebebeb;
 `;
 
 const ImageArea = styled.div``;
