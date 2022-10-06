@@ -2,12 +2,37 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import themeApi from 'api/themeAPI';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const ListTop = () => {
   const navigate = useNavigate();
   const [buckets, setBuckets] = useState([]);
   const [list, setList] = useState([]);
   const [onList, setOnList] = useState('CAMPAIGN');
+  const [perView, setPerView] = useState(7);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const check = () => {
+    width > 1000 ? setPerView(7) : setPerView(4);
+  };
+
+  const Resize = () => {
+    useEffect(() => {
+      const handleResize = () => {
+        setWidth(window.innerWidth);
+        check();
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, [width]);
+  };
+
+  Resize();
 
   useEffect(() => {
     themeApi.getCategoryData().then((data) => {
@@ -30,30 +55,36 @@ const ListTop = () => {
   return (
     <>
       <Title>취향대로 골라보기</Title>
+
       <CategoryUl>
-        {buckets &&
-          buckets.map((list, idx) => {
-            return list === onList ? (
-              <CategoryLiOn
-                key={idx}
-                onClick={() => {
-                  getList(list);
-                }}
-              >
-                {list}
-              </CategoryLiOn>
-            ) : (
-              <CategoryLi
-                key={idx}
-                onClick={() => {
-                  getList(list);
-                }}
-              >
-                {list}
-              </CategoryLi>
-            );
-          })}
+        <Swiper spaceBetween={0} slidesPerView={perView}>
+          {buckets &&
+            buckets.map((list, idx) => {
+              return list === onList ? (
+                <SwiperSlide
+                  style={{ textAlign: 'center' }}
+                  key={idx}
+                  onClick={() => {
+                    getList(list);
+                  }}
+                >
+                  <CategorySpanOn>{list}</CategorySpanOn>
+                </SwiperSlide>
+              ) : (
+                <SwiperSlide
+                  style={{ textAlign: 'center' }}
+                  key={idx}
+                  onClick={() => {
+                    getList(list);
+                  }}
+                >
+                  <CategorySpan>{list}</CategorySpan>
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
       </CategoryUl>
+
       <ListContainer>
         {list.length > 0 ? (
           list.map((els) => {
@@ -118,18 +149,19 @@ const Title = styled.h1`
 `;
 
 const CategoryUl = styled.ul`
-  margin: 16px 0px 8px 0px;
-  height: 26px;
-  overflow: hidden;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
 `;
 
-const CategoryLi = styled.li`
-  float: left;
-  margin-right: 20px;
-  font-size: 18px;
-  line-height: 22px;
+const CategorySpan = styled.span`
+  font-size: 20px;
+  line-height: 33px;
   color: #aaabb3;
   font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -142,15 +174,16 @@ const CategoryLi = styled.li`
   }
 `;
 
-const CategoryLiOn = styled.li`
-  float: left;
-  margin-right: 20px;
-  font-size: 18px;
-  line-height: 22px;
+const CategorySpanOn = styled.span`
+  font-size: 20px;
+  line-height: 33px;
   font-weight: 400;
   color: #ff417d;
   border-bottom: 2px solid #ff417d;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   @media (max-width: 768px) {
     font-size: 16px;
@@ -176,6 +209,7 @@ const ListItem = styled.div`
 
   @media (max-width: 768px) {
     width: calc(50% - 8px);
+    margin-top: 20px;
   }
 `;
 

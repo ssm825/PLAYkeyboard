@@ -40,7 +40,9 @@ const Wrapper = styled.footer`
   margin-top: 30px;
   padding-bottom: 20px;
   height: 120px;
-  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.08),
+    inset 0px -11px 8px -10px rgba(0, 0, 0, 0.08);
+
   background-color: ${colors.white};
 
   @media (max-width: 768px) {
@@ -53,7 +55,7 @@ const Wrapper = styled.footer`
 `;
 const Content = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 1200px;
 
   button {

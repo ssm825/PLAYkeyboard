@@ -7,11 +7,14 @@ import styled from 'styled-components';
 const Home = () => {
   return (
     <>
-      <Header />
+      {' '}
       <Inner>
+        <Header />
+
         <ListTop />
+
+        <Nav />
       </Inner>
-      <Nav />
     </>
   );
 };
