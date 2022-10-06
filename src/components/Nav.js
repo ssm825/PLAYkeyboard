@@ -34,9 +34,11 @@ const Mixins = ({ img }) => css`
   transition: 0.2s;
 `;
 
-const Wrapper = styled.footer`
+const Wrapper = styled.nav`
   display: flex;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
   margin-top: 30px;
   padding-bottom: 20px;
   height: 120px;
