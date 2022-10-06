@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-const ThemeImage = ({a}) => {
+const ThemeImage = ({themeData}) => {
+   console.log(themeData)
    return (
       <ImgArea
       slidesPerView={1}
       >
-      {a.images && a.images.map((data, idx) => {
+      {themeData.images && themeData.images.map((data, idx) => {
          return (
             <SwiperSlide key={idx}>
-               <img src={data.imageUrl} alt={a.name} />
+               <img src={data.imageUrl} alt={themeData.name} />
             </SwiperSlide>
          );
       })}
