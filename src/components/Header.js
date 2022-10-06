@@ -1,14 +1,19 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   return (
     <Wrapper>
       <Content>
         <Title>
-          <Link to="/">
-            <img src="/images/img_playkeyboard_logo.png" alt="logo" />
-          </Link>
+          <img
+            src="/images/img_playkeyboard_logo.png"
+            alt="logo"
+            onClick={refreshPage}
+          />
         </Title>
         <Search>
           <SearchIcon />
@@ -49,6 +54,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   width: 320px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 200px;
