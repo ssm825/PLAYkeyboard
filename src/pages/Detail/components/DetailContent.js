@@ -17,7 +17,7 @@ const Page2Bottom = () => {
   return (
     <Inner>
       <Content>
-        {figureImg && (
+        {figureImg.length > 0 && (
           <>
             <ImageArea>
               {figureImg &&
