@@ -22,7 +22,7 @@
 | 노정은 | - |
 | 김영수 | theme detail page |
 | 류승연 | theme detail page | 
-| 서수민 | theme detail page |
+| 서수민 | 공통, Header, Nav |
 | 정억화 | 메인페이지 리스트|
 
 <br><br>
@@ -58,11 +58,33 @@
 - 동적라우팅
 
 ### 메인
+#### Header
+- 레이아웃 구현
+- 반응형 적용
+
+<br>
+
+#### Theme list
 - Swiper 라이브러리를 이용한 카테고리 이동
 - 조건부랜더링을 이용한 카테고리 클릭효과
 
+<br>
+
+#### Nav
+- 레이아웃 구현
+- 반응형 적용
+
+
 ### 디테일
-- 기능기능기능
+#### Theme Info
+- 레이아웃 구현
+- 반응형 적용
+
+<br>
+
+#### Theme Content
+- 레이아웃 구현
+- 반응형 적용
 
 <br><br>
 
