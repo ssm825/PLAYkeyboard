@@ -1,22 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ThemeTxt = ({a}) => {
-   if(a) {
+const ThemeTxt = ({themeData}) => {
    return (
       <TxtArea>
-         <ThemeName>{a.name}</ThemeName>
-         <ThemeCreator>{a.creator}</ThemeCreator>
+         <ThemeName>{themeData.name}</ThemeName>
+         <ThemeCreator>{themeData.creator}</ThemeCreator>
          <div>
-            {a.hashtag && a.hashtag.map((data) => {
+            {themeData.hashtag && themeData.hashtag.map((data, idx) => {
                return (
-                  <Tag>{data}</Tag>
+                  <Tag key={idx}>{data}</Tag>
                )
             })}
          </div>
       </TxtArea>
    );
-   }
 };
 
 export default ThemeTxt;
