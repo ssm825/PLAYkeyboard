@@ -39,18 +39,17 @@ const Wrapper = styled.nav`
   justify-content: center;
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
   margin-top: 30px;
   padding-bottom: 20px;
+  height: 120px;
+  width: 100%;
+  max-width: calc(1120px - 32px);
   box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.08),
     inset 0px -11px 8px -10px rgba(0, 0, 0, 0.08);
   background-color: ${colors.white};
   transition: 0.2s;
 
   @media (max-width: 768px) {
-    width: 100%;
     height: 90px;
   }
 
@@ -61,8 +60,8 @@ const Wrapper = styled.nav`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1120px;
-  padding: 0 30px;
+  width: 100%;
+
   button {
     position: relative;
     padding: 0 20px;
@@ -90,7 +89,6 @@ const Content = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
     button {
       padding: 0 30px;
       div {
