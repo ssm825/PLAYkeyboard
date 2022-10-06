@@ -1,6 +1,7 @@
 import Header from 'components/Header';
 import MainBody from './components/MainBody';
 import Nav from 'components/Nav';
+import ScrollTopBtn from './components/ScrollTopBtn';
 
 import styled from 'styled-components';
 
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <Inner>
         <Header />
+        <ScrollTopBtn />
         <MainBody />
         <Nav />
       </Inner>
