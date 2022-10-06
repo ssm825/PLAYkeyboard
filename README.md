@@ -23,7 +23,7 @@
 | 김영수 | theme detail page |
 | 류승연 | theme detail page | 
 | 서수민 | theme detail page |
-| 정억화 | theme detail page |
+| 정억화 | 메인페이지 리스트|
 
 <br><br>
 
@@ -54,10 +54,11 @@
 ## 구현 내용
 
 ### 공통
-- 기능기능기능
+- axios를 이용하여 api통신
 
 ### 메인
-- 기능기능기능
+- Swiper 라이브러리를 이용한 카테고리 이동
+- 
 
 ### 디테일
 - 기능기능기능
