@@ -5,4 +5,5 @@ export const colors = {
   text_black: '#42444C',
   icon_black: '2E2F33',
   white: '#FFFFFF',
+  soft_gray: '#aaabb3;',
 };

@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import themeApi from 'api/themeAPI';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { colors } from 'styles/colors';
 import 'swiper/css';
 
-const ListTop = () => {
+const MainBody = () => {
   const navigate = useNavigate();
   const [buckets, setBuckets] = useState([]);
   const [list, setList] = useState([]);
@@ -55,8 +56,7 @@ const ListTop = () => {
   return (
     <>
       <Title>취향대로 골라보기</Title>
-
-      <CategoryUl>
+      <Category>
         <Swiper spaceBetween={0} slidesPerView={perView}>
           {buckets &&
             buckets.map((list, idx) => {
@@ -83,7 +83,7 @@ const ListTop = () => {
               );
             })}
         </Swiper>
-      </CategoryUl>
+      </Category>
 
       <ListContainer>
         {list.length > 0 ? (
@@ -99,11 +99,11 @@ const ListTop = () => {
                 >
                   <ItemImg src={imageUrl} />
                   <Name>{name}</Name>
-                  <HashtagUl>
+                  <Hashtag>
                     {hashtag.map((els) => {
                       return <HashtagLi>#{els}</HashtagLi>;
                     })}
-                  </HashtagUl>
+                  </Hashtag>
                   <ItemBottom>
                     <LikeDown>
                       <img src="/images/icon/down.png" alt="다운아이콘" />
@@ -132,10 +132,10 @@ const ListTop = () => {
 };
 
 const Title = styled.h1`
-  font-weight: 700;
+  color: ${colors.text_black};
   font-size: 24px;
+  font-weight: 700;
   line-height: 32px;
-  color: #42444c;
 
   @media (max-width: 768px) {
     font-size: 20px;
@@ -148,16 +148,16 @@ const Title = styled.h1`
   }
 `;
 
-const CategoryUl = styled.ul`
+const Category = styled.ul`
   width: 100%;
   height: 30px;
   margin-top: 10px;
 `;
 
 const CategorySpan = styled.span`
+  color: ${colors.soft_gray};
   font-size: 20px;
   line-height: 33px;
-  color: #aaabb3;
   font-weight: 400;
   overflow: hidden;
   white-space: nowrap;
@@ -175,15 +175,15 @@ const CategorySpan = styled.span`
 `;
 
 const CategorySpanOn = styled.span`
+  color: ${colors.main_pink};
+  border-bottom: 2px solid ${colors.main_pink};
   font-size: 20px;
   line-height: 33px;
   font-weight: 400;
-  color: #ff417d;
-  border-bottom: 2px solid #ff417d;
-  cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     font-size: 16px;
@@ -197,15 +197,16 @@ const CategorySpanOn = styled.span`
 
 const ListContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  flex-wrap: wrap;
+  margin-bottom: 150px;
 `;
 
 const ListItem = styled.div`
   width: calc(32% - 4px);
-  border: 1px;
   margin-top: 33px;
+  border: 1px;
 
   @media (max-width: 768px) {
     width: calc(50% - 8px);
@@ -231,13 +232,13 @@ const Name = styled.h3`
 
   @media (max-width: 768px) {
     margin-top: 8px;
-    font-weight: 500;
     font-size: 14px;
     line-height: 20px;
+    font-weight: 500;
   }
 `;
 
-const HashtagUl = styled.ul`
+const Hashtag = styled.ul`
   height: 22px;
   overflow: hidden;
   white-space: nowrap;
@@ -250,10 +251,10 @@ const HashtagUl = styled.ul`
 
 const HashtagLi = styled.li`
   float: left;
-  font-weight: 400;
-  font-size: 15px;
   margin: 2px 5px 0px 0px;
-  color: #aaabb3;
+  color: ${colors.soft_gray};
+  font-size: 15px;
+  font-weight: 400;
 
   @media (max-width: 768px) {
     font-size: 12px;
@@ -261,17 +262,17 @@ const HashtagLi = styled.li`
 `;
 
 const ItemBottom = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 `;
 
 const LikeDown = styled.div`
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
   display: flex;
   align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
 
   img {
     width: 15px;
@@ -291,16 +292,16 @@ const LikeDown = styled.div`
 
 const ItemEmpty = styled.div`
   width: 100%;
+  color: ${colors.soft_gray};
   font-size: 20px;
   line-height: 150px;
   text-align: center;
-  color: #aaabb3;
 `;
 
 const ItemEmptySpan = styled.span`
+  color: ${colors.main_pink};
   font-size: 22px;
-  color: #ff417d;
   font-weight: 700;
 `;
 
-export default ListTop;
+export default MainBody;
