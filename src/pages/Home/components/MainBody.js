@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { colors } from 'styles/colors';
 import 'swiper/css';
+import _ from 'lodash';
 
 const MainBody = () => {
   const navigate = useNavigate();
@@ -13,6 +14,16 @@ const MainBody = () => {
   const [onList, setOnList] = useState('CAMPAIGN');
   const [perView, setPerView] = useState(7);
   const [width, setWidth] = useState(window.innerWidth);
+  const [scroll, setScroll] = useState(11);
+
+  window.addEventListener(
+    'scroll',
+    _.throttle(() => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        setScroll(scroll + 4);
+      }
+    }),
+  );
 
   const check = () => {
     width > 1000 ? setPerView(7) : setPerView(4);
@@ -66,6 +77,7 @@ const MainBody = () => {
                   key={idx}
                   onClick={() => {
                     getList(list);
+                    setScroll(11);
                   }}
                 >
                   <CategorySpanOn>{list}</CategorySpanOn>
@@ -76,6 +88,7 @@ const MainBody = () => {
                   key={idx}
                   onClick={() => {
                     getList(list);
+                    setScroll(11);
                   }}
                 >
                   <CategorySpan>{list}</CategorySpan>
@@ -87,34 +100,39 @@ const MainBody = () => {
 
       <ListContainer>
         {list.length > 0 ? (
-          list.map((els) => {
+          list.map((els, idx) => {
             const { themeId, imageUrl, name, hashtag, downloads, price } = els;
             return (
               <>
-                <ListItem
-                  key={themeId}
-                  onClick={() => {
-                    goToDetail(themeId);
-                  }}
-                >
-                  <ItemImg src={imageUrl} />
-                  <Name>{name}</Name>
-                  <Hashtag>
-                    {hashtag.map((els) => {
-                      return <HashtagLi>#{els}</HashtagLi>;
-                    })}
-                  </Hashtag>
-                  <ItemBottom>
-                    <LikeDown>
-                      <img src="/images/ic_all_download.png" alt="다운아이콘" />
-                      {downloads}
-                    </LikeDown>
-                    <LikeDown>
-                      <img src="/images/ic_dia.png" alt="가격아이콘" />
-                      {price}
-                    </LikeDown>
-                  </ItemBottom>
-                </ListItem>
+                {idx <= scroll && (
+                  <ListItem
+                    key={themeId}
+                    onClick={() => {
+                      goToDetail(themeId);
+                    }}
+                  >
+                    <ItemImg src={imageUrl} />
+                    <Name>{name}</Name>
+                    <Hashtag>
+                      {hashtag.map((els) => {
+                        return <HashtagLi>#{els}</HashtagLi>;
+                      })}
+                    </Hashtag>
+                    <ItemBottom>
+                      <LikeDown>
+                        <img
+                          src="/images/ic_all_download.png"
+                          alt="다운아이콘"
+                        />
+                        {downloads}
+                      </LikeDown>
+                      <LikeDown>
+                        <img src="/images/ic_dia.png" alt="가격아이콘" />
+                        {price}
+                      </LikeDown>
+                    </ItemBottom>
+                  </ListItem>
+                )}
               </>
             );
           })
