@@ -11,7 +11,7 @@
 <br><br>
 
 # 배포 링크
-- [링크](https://633ee4d8280de3008bb1795c--kaleidoscopic-piroshki-1a89fd.netlify.app/)
+- [링크](https://playkeyboard.netlify.app/)
 
 <br><br>
 
