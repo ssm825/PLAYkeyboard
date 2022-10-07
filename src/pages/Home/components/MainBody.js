@@ -43,7 +43,6 @@ const MainBody = () => {
       };
     }, [width]);
   };
-
   Resize();
 
   useEffect(() => {
@@ -103,10 +102,9 @@ const MainBody = () => {
           list.map((els, idx) => {
             const { themeId, imageUrl, name, hashtag, downloads, price } = els;
             return (
-              <>
+              <ListItem key={themeId}>
                 {idx <= scroll && (
-                  <ListItem
-                    key={themeId}
+                  <div
                     onClick={() => {
                       goToDetail(themeId);
                     }}
@@ -114,8 +112,8 @@ const MainBody = () => {
                     <ItemImg src={imageUrl} />
                     <Name>{name}</Name>
                     <Hashtag>
-                      {hashtag.map((els) => {
-                        return <HashtagLi>#{els}</HashtagLi>;
+                      {hashtag.map((els, idx) => {
+                        return <HashtagLi key={idx}>#{els}</HashtagLi>;
                       })}
                     </Hashtag>
                     <ItemBottom>
@@ -131,9 +129,9 @@ const MainBody = () => {
                         {price}
                       </LikeDown>
                     </ItemBottom>
-                  </ListItem>
+                  </div>
                 )}
-              </>
+              </ListItem>
             );
           })
         ) : (
