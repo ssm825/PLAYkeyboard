@@ -43,7 +43,6 @@ const MainBody = () => {
       };
     }, [width]);
   };
-
   Resize();
 
   useEffect(() => {
