@@ -18,6 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -26,6 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "http://ssm825.github.io/PLAYkeyboard",
   "eslintConfig": {
     "extends": [
       "react-app",
