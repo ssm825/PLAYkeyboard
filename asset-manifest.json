@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PLAYkeyboard/static/css/main.46cef12e.css",
+    "main.js": "/PLAYkeyboard/static/js/main.7461b707.js",
+    "index.html": "/PLAYkeyboard/index.html",
+    "main.46cef12e.css.map": "/PLAYkeyboard/static/css/main.46cef12e.css.map",
+    "main.7461b707.js.map": "/PLAYkeyboard/static/js/main.7461b707.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46cef12e.css",
+    "static/js/main.7461b707.js"
+  ]
+}
